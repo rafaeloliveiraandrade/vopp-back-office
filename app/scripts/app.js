@@ -7,7 +7,10 @@ angular
     'ngRoute'
   ])
   .config(function ($routeProvider) {
-    $routeProvider
+	    $routeProvider.when('/', {
+	        templateUrl: 'views/product-list.html',
+	        controller: 'ProductListCtrl'
+	    })    
       .when('/product-add', {
         templateUrl: 'views/product-add.html',
         controller: 'ProductAddCtrl'
@@ -17,6 +20,6 @@ angular
         controller: 'ProductListCtrl'
       })
       .otherwise({
-        redirectTo: '/product-list.html'
+        redirectTo: '/'
       });
   });
