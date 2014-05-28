@@ -1,28 +1,54 @@
+<div id="sacred">
+	<div class="container">
 
-<div class="jumbotron">
-  <h1>Cadastro de Produtos</h1>
-  <p class="lead">
-    <img src="images/yeoman.png" alt="I'm Yeoman"><br>
-    Always a pleasure scaffolding your apps.
-  </p>
-  <p><a class="btn btn-lg btn-success" ng-href="#">Splendid!<span class="glyphicon glyphicon-ok"></span></a></p>
-</div>
+		<div class="page sacred-third-parties-page">
 
-<div class="row marketing">
-  <h4>HTML5 Boilerplate</h4>
-  <p>
-    HTML5 Boilerplate is a professional front-end template for building fast, robust, and adaptable web apps or sites.
-  </p>
+			<div class="page-header">
+				<div class="row">
+					<div class="col-10">
+						<div class="title">Listagem de Produtos</div>
+					</div>
+				</div>
+			</div>
 
-  <h4>Angular</h4>
-  <p>
-    AngularJS is a toolset for building the framework most suited to your application development.
-  </p>
+			<div class="page-body">
+				<div class="content">
+					<div class="content-header">
+						<div class="row">
+							<div class="col-6">
+								<input type="text" class="input-header" placeholder="Filtrar por Nome" ng-model="searchClient" customer-name>
+							</div>
+							<div class="col-6">
+								<button type="submit" class="button-green inline-button" ng-click="newClient('third-parties')" >Novo Produto</button>
+							</div>
+						</div>
+					</div>
+					<div class="content-body">
+						<div class="grid">
+							<div class="grid-header">
+								<div class="row">
+								<div class="col-10">Nome</div>
+									<div class="col-6">Email</div>
+									<div class="col-4 text-center">Data Nasc.</div>
+									<div class="col-4">Telefone</div>
+								</div>
+							</div>
+							
+							<div class="grid-body grid-scroll">
+								<div class="grid-item single-line clicable" ng-repeat="entity in filteredEntities">
+									<div class="row" ng-click="editEntity(entity.uuid, 'third-parties')">
+										<div class="col-10 name-cutter">{{entity.name}}</div>
+										<div class="col-6">{{entity.emails[0].address}}</div>
+										<div class="col-4 text-center">{{entity.birthDate.formated}}</div>
+										<div class="col-4">{{entity.phones[0].number | phone}}</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
 
-  <h4>Karma</h4>
-  <p>Spectacular Test Runner for JavaScript.</p>
-</div>
 
-<div class="footer">
-  <p><span class="glyphicon glyphicon-heart"></span> from the Yeoman team</p>
-</div>
+			</div>
+		</div>
+	</div>

@@ -1,0 +1,92 @@
+#sacred .sacred-purchase-order-page .page-body-full{
+	height:100%;
+}
+
+#sacred .purchase-order-pending-products-part .grid-scroll{
+	height:calc(100% - 1px);
+}
+
+/* confirm part */
+#sacred .purchase-order-confirm-part .grid-scroll {
+	height:calc(100% - 2px);
+}
+
+/* ticket part */
+#sacred .sacred-purchase-order-page .purchase-order-ticket-part1 .grid-scroll{
+	height:calc(100% - 54px);
+}
+
+#sacred .sacred-purchase-order-page .purchase-order-ticket-part2 .grid{
+	height: calc(100% - 10px);
+}
+
+#sacred .sacred-purchase-order-page .purchase-order-ticket-part2 .grid-scroll{
+	height:calc(100% - 40px);
+}
+
+#sacred .sacred-purchase-order-page .two-parts-container {
+	height:100%;
+	margin:0 -5px;
+}
+
+#sacred .sacred-purchase-order-page .two-parts-container .col-16 {
+	height:100%;
+}
+#sacred .sacred-purchase-order-page .product-to-buy-order-part .grid-scroll {
+	height:calc(100% - 88px);
+}
+
+#sacred .right-holder{
+	border: 1px solid #e0e0e0;
+	border-radius: 4px;
+	margin-bottom: 10px;
+}
+
+#sacred .right-holder .discount-notice{
+	margin: 8px;
+	color: #FF9D00;
+	letter-spacing: -0.5px;
+	text-align: center;
+}
+
+#sacred .right-holder .content .title{
+	display: block;
+	margin: 5px 0 0 4px;
+	font-weight: bold;
+	height: 22px;
+	line-height: 22px;
+}
+
+#sacred .right-holder .content .item{
+	display: inline-block;
+	width: 100%;
+}
+
+#sacred .right-holder .content .tag{
+	width: 100%;
+	margin-left: 5px;
+	height: 22px;
+	line-height: 22px;
+}
+
+#sacred .right-holder .content .value{
+	width: 100%;
+	text-align: right;
+	border: 1px solid #eee;
+	background-color: #f2f2f2;
+	border-radius: 4px;
+	margin-right: 5px;
+	float: right;
+	padding-right: 5px;
+	height: 20px;
+	line-height: 20px;
+}
+
+/* button ok on header */
+#sacred .btn-on-header {
+	margin-top:-2px;
+	margin-left:-10px;
+	min-width:50px!important;
+	font-size:inherit!important;
+	padding:2px 0!important;
+}
