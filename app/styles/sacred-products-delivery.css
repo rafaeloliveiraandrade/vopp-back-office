@@ -1,0 +1,49 @@
+/* just header*/
+#sacred .product-delivery-order-part .grid-scroll,
+#sacred .product-delivery-products-part .grid-scroll{
+	height: calc(100% - 81px);
+}
+
+#sacred .product-delivery-products-part .grid{
+	height: calc(100% - 47px);
+}
+
+/* test styles */
+
+#sacred .product-delivery-products-part-test .grid-scroll{
+height: calc(100% - 40px);
+}
+
+#sacred .order-header-test{
+	text-align:right;
+	height:30px;
+	line-height:30px;
+}
+
+#sacred .client-header-test{
+	 height:30px;
+	 line-height:15px;
+}
+
+#sacred .product-delivery-products-part-test .grid{
+	height: calc(100% - 47px);
+}
+
+#sacred .calendar-header-test .dropdown-menu{
+	left: -138px;
+}
+
+#sacred .calendar-header-test {
+	margin-left:54px;
+}
+
+#sacred .calendar-label-left.hour {
+	margin-right:0;
+}
+#sacred .calendar-label-left.hour input {
+	width:30px;
+	height:30px;
+}
+#sacred .calendar-label-left.hour input:last-child {
+	margin-left:3px;
+}
