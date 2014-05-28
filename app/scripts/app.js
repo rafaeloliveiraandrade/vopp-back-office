@@ -8,10 +8,6 @@ angular
   ])
   .config(function ($routeProvider) {
     $routeProvider
-      .when('/', {
-        templateUrl: 'views/main.html',
-        controller: 'MainCtrl'
-      })
       .when('/product-add', {
         templateUrl: 'views/product-add.html',
         controller: 'ProductAddCtrl'
@@ -21,6 +17,6 @@ angular
         controller: 'ProductListCtrl'
       })
       .otherwise({
-        redirectTo: '/'
+        redirectTo: '/product-list.html'
       });
   });
