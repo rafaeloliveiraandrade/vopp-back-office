@@ -7,6 +7,7 @@
 					'tnt.backoffice.product.add.ctrl',
 					'tnt.backoffice.product.list.ctrl',
 					'tnt.backoffice.product.service',
+					'tnt.backoffice.product.entity',
 					'tnt.backoffice.product.client' ]);
 
 	voppBackOfficeApp.config([ '$routeProvider', function($routeProvider) {

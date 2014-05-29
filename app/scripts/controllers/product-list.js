@@ -1,21 +1,29 @@
-(function ($, angular, alert, confirm, unescape) {
-    'use strict';
-    angular
-        .module('tnt.backoffice.product.list.ctrl', ['tnt.backoffice.product.service'])
-        .controller('ProductListCtrl',
-            
-        	function ($scope, ProductService) {
+(function($, angular, alert, confirm, unescape) {
+	'use strict';
+	angular
+			.module('tnt.backoffice.product.list.ctrl',
+					[ 'tnt.backoffice.product.service' ])
+			.controller(
+					'ProductListCtrl',
 
-       		 $scope.products = ProductService.list();
-        	
-             $scope.product = undefined;
+					function($scope, ProductService) {
 
-             $scope.remove = function () {
-            	 //TODO Promessa
-            	 //TODO Janela de confirmacao
-            	 //TODO msg de erro
-            	 //TODO msg sucesso
-            	 ProductService.remove($scope.product);
-             };          
-        }); 
+						$scope.products = ProductService.list();
+
+						$scope.product = undefined;
+						$scope.message = '';
+
+						$scope.remove = function() {
+							ProductService
+									.remove($scope.product.uuid)
+									.then(
+											function() {
+												message = 'Produto removido com sucesso.';
+											},
+											function(err) {
+												message = 'Erro ao remover o produto. Verifique os seguintes campos: '
+														+ err;
+											});
+						};
+					});
 }(jQuery, angular, window.alert, window.confirm, window.unescape));
