@@ -1,36 +1,122 @@
 <div id="sacred">
 	<div class="container">
 		<div class="page sacred-third-parties-page">
+<div class="row">
+	<div class="col-md-6">
+		<div class="panel panel-info">
 
 			<div class="page-header">
 				<div class="row">
 					<div class="col-10">
 						<div class="title">Cadastro de Produtos</div>
 					</div>
+
+			<div class=" master-container">
+				<ul class="breadcrumb">
+					<li class="active">Cadastro de Produtos</li>
+				</ul>
+			</div>
+ 
+
+			<div>
+				<div class="control-group">
+					<label class="control-label">Linha:</label> 
+					<input name="line" class="form-control" style="width:300px" type="text" ng-model="product.line" required>
 				</div>
 			</div>
-{{message}}
+
 			<div class="row-fluid">
+			<div>
 				<div class="control-group">
 					<label class="control-label">Nome:</label> 
 					<input name="title" class="input-block-level" type="text" ng-model="product.title" required>
+					<label class="control-label">Se&ccedil;&atilde;o:</label> 
+					<input name="session" class="form-control" style="width:300px" type="text" ng-model="product.session" required>
 				</div>
+			</div>
+
+			<div>
 				<div class="control-group">
 					<label class="control-label">Se&ccedil;&atilde;o:</label>
 					<input name="session" class="input-block-level" type="text" ng-model="product.session" required>
+					<label class="control-label">T&iacute;tulo:</label> 
+					<input name="title" class="form-control" style="width:450px" type="text" ng-model="product.title" required>
 				</div>
+			</div>
+			
+			<div>
 				<div class="control-group">
 					<label class="control-label">Linha:</label>
 					<input name="line" class="input-block-level" type="text" ng-model="product.line" required>
+					<label class="control-label">Descri&ccedil;&atilde;o:</label> 
+					<input name="desciption" class="form-control" style="width:100%" type="text" ng-model="product.desciption" required>
 				</div>
 
+			</div>
+			
+			<div>
 				<div class="control-group">
 					<label class="control-label">Pre&ccedil;o:</label>
 					<input name="price" class="input-block-level" type="text" ng-model="product.price" required>
+					<label class="control-label">Pontos:</label> 
+					<input name="points" class="form-control" style="width:60px" type="number" ng-model="product.points" required>
 				</div>
+			</div>
+			
+			<div>
 				<div class="control-group">
 					<button class="button-green inline-button" ng-click="create()">Salvar</button>
+					<label class="control-label">Pre&ccedil;o:</label> 
+					<input name="price" class="form-control" style="width: 100px" type="number" ng-model="product.price" required>
 				</div>
+			</div>
+			
+			<div>
+				<div class="control-group">
+					<label class="control-label">Imagem:</label> 
+					<input name="image" class="form-control" type="image" ng-model="product.image" required>
+				</div>
+			</div>
+	
+			<br/>			
+			<div style="border-bottom: 1px solid #DCDCDC "></div>
+			<br/>
+			
+			<div>
+				<div class="control-group">
+					<label class="control-label">Op&ccedil;&atilde;o:</label> 
+					<input name="option" class="form-control" style="width: 80%"  type="text" ng-model="product.option" >
+				</div>
+			</div>
+			
+			<div>
+				<div class="control-group">
+					<label class="control-label">SKU:</label> 
+					<input name="sku" class="form-control" type="text" ng-model="product.sku" >
+				</div>
+			</div>
+			
+			<div>
+				<div class="control-group">
+					<label class="control-label">Pre&ccedil;o:</label> 
+					<input name="pricesku" class="form-control" style="width: 100px" type="number" ng-model="product.pricesku" >
+				</div>
+			</div>
+			
+			<div>
+				<div class="control-group">
+					<label class="control-label">Imagem:</label> 
+					<input name="imagesku" class="form-control" type="image" ng-model="product.imagesku" required>
+				</div>
+			</div>
+			
+			<br/>			
+				<div style="border-bottom: 1px solid #DCDCDC "></div>
+			<br/>
+			
+			<div style="text-align: center;">
+				<button type="submit" class="btn btn-default" ng-click="cadastrarNovo()">Cadastrar</button>
+				<button type="submit" class="btn btn-default" ng-click="limparTela()">Limpar</button>
 			</div>
 
 		</div>
