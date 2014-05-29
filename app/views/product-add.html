@@ -1,32 +1,38 @@
+<div id="sacred">
+	<div class="container">
+		<div class="page sacred-third-parties-page">
 
-<!-- 
-<div class="jumbotron">
-  <h1>Cadastro de Produtos</h1>
-  <p class="lead">
-    <img src="images/yeoman.png" alt="I'm Yeoman"><br>
-    Always a pleasure scaffolding your apps.
-  </p>
-  <p><a class="btn btn-lg btn-success" ng-href="#">Splendid!<span class="glyphicon glyphicon-ok"></span></a></p>
-</div>
- -->
- 
- 
+			<div class="page-header">
+				<div class="row">
+					<div class="col-10">
+						<div class="title">Cadastro de Produtos</div>
+					</div>
+				</div>
+			</div>
 
-<div class="row marketing">
-  <h4>HTML5 Boilerplate</h4>
-  <p>
-    HTML5 Boilerplate is a professional front-end template for building fast, robust, and adaptable web apps or sites.
-  </p>
+			<div class="row-fluid">
+				<div class="control-group">
+					<label class="control-label">Nome:</label> 
+					<input name="title" class="input-block-level" type="text" ng-model="product.title" required>
+				</div>
+				<div class="control-group">
+					<label class="control-label">Se&ccedil;&atilde;o:</label>
+					<input name="session" class="input-block-level" type="text" ng-model="product.session" required>
+				</div>
+				<div class="control-group">
+					<label class="control-label">Linha:</label>
+					<input name="line" class="input-block-level" type="text" ng-model="product.line" required>
+				</div>
 
-  <h4>Angular</h4>
-  <p>
-    AngularJS is a toolset for building the framework most suited to your application development.
-  </p>
+				<div class="control-group">
+					<label class="control-label">Pre&ccedil;o:</label>
+					<input name="price" class="input-block-level" type="text" ng-model="product.price" required>
+				</div>
+				<div class="control-group">
+					<button class="button-green inline-button" ng-click="create()">Salvar</button>
+				</div>
+			</div>
 
-  <h4>Karma</h4>
-  <p>Spectacular Test Runner for JavaScript.</p>
-</div>
-
-<div class="footer">
-  <p><span class="glyphicon glyphicon-heart"></span> from the Yeoman team</p>
+		</div>
+	</div>
 </div>

@@ -16,10 +16,10 @@
 					<div class="content-header">
 						<div class="row">
 							<div class="col-6">
-								<input type="text" class="input-header" placeholder="Filtrar por Nome" ng-model="searchClient" customer-name>
+								<input type="text" class="input-header" placeholder="Filtrar por Nome" ng-model="searchProduct" customer-name>
 							</div>
 							<div class="col-6">
-								<button type="submit" class="button-green inline-button" ng-click="newClient('third-parties')" >Novo Produto</button>
+								<button type="submit" class="button-green inline-button" ng-click="productAdd()" >Novo Produto</button>
 							</div>
 						</div>
 					</div>
@@ -27,28 +27,27 @@
 						<div class="grid">
 							<div class="grid-header">
 								<div class="row">
-								<div class="col-10">Nome</div>
-									<div class="col-6">Email</div>
-									<div class="col-4 text-center">Data Nasc.</div>
-									<div class="col-4">Telefone</div>
+									<div class="col-10">Nome</div>
+									<div class="col-6">Se&ccedil;&atilde;o</div>
+									<div class="col-4">Linha</div>
+									<div class="col-4">Pre&ccedil;o</div>
 								</div>
 							</div>
-							
+
 							<div class="grid-body grid-scroll">
-								<div class="grid-item single-line clicable" ng-repeat="entity in filteredEntities">
-									<div class="row" ng-click="editEntity(entity.uuid, 'third-parties')">
-										<div class="col-10 name-cutter">{{entity.name}}</div>
-										<div class="col-6">{{entity.emails[0].address}}</div>
-										<div class="col-4 text-center">{{entity.birthDate.formated}}</div>
-										<div class="col-4">{{entity.phones[0].number | phone}}</div>
+								<div class="grid-item single-line clicable" ng-repeat="product in products | filter:searchProduct | limitTo:20">
+									<div class="row">
+										<div class="col-10">{{product.title}}</div>
+										<div class="col-6">{{product.session}}</div>
+										<div class="col-4">{{product.line}}</div>
+										<div class="col-4">{{product.price}}</div>
 									</div>
 								</div>
 							</div>
 						</div>
 					</div>
 				</div>
-
-
 			</div>
 		</div>
 	</div>
+</div>

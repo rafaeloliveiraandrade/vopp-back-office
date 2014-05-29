@@ -1,22 +1,26 @@
-'use strict';
+(function(angular, window) {
+	'use strict';
 
-angular
-  .module('voppBackOfficeApp', [
-    'ngCookies',
-    'ngResource',
-    'ngRoute'
-  ])
-  .config(function ($routeProvider) {
-    $routeProvider
-      .when('/product-add', {
-        templateUrl: 'views/product-add.html',
-        controller: 'ProductAddCtrl'
-      })
-      .when('/product-list', {
-        templateUrl: 'views/product-list.html',
-        controller: 'ProductListCtrl'
-      })
-      .otherwise({
-        redirectTo: '/product-list.html'
-      });
-  });
+	var voppBackOfficeApp = angular
+			.module('voppBackOfficeApp', [ 'ngCookies', 'ngResource',
+					'ngRoute', 
+					'tnt.backoffice.product.add.ctrl',
+					'tnt.backoffice.product.list.ctrl',
+					'tnt.backoffice.product.service',
+					'tnt.backoffice.product.client' ]);
+
+	voppBackOfficeApp.config([ '$routeProvider', function($routeProvider) {
+		$routeProvider.when('/product-list', {
+			templateUrl : 'views/product-list.html',
+			controller : 'ProductListCtrl'
+		})
+		.when('/product-add', {
+			templateUrl : 'views/product-add.html',
+			controller : 'ProductAddCtrl'
+		})
+		.otherwise({
+			redirectTo : '/product-list.html'
+		});
+	} ]);
+
+})(angular, window);
