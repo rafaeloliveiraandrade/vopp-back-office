@@ -12,10 +12,7 @@
 						$scope.message = '';
 
 						$scope.create = function() {
-							ProductService
-									.create($scope.product)
-									.then(
-											function() {
+							ProductService.create($scope.product).then(function() {
 												$scope.message = 'Produto cadastrado com sucesso.';
 											},
 											function(err) {

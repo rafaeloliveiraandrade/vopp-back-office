@@ -4,6 +4,7 @@
 	var voppBackOfficeApp = angular
 			.module('voppBackOfficeApp', [ 'ngCookies', 'ngResource',
 					'ngRoute', 
+					'tnt.backoffice.identity',
 					'tnt.backoffice.product.add.ctrl',
 					'tnt.backoffice.product.list.ctrl',
 					'tnt.backoffice.product.service',

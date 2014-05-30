@@ -1,8 +1,9 @@
 (function(angular) {
 	'use strict';
 
-	angular.module('tnt.backoffice.product.client', ['tnt.backoffice.product.entity']).service(
-			'ProductClient', function ProductClient() {
+	angular.module('tnt.backoffice.product.client',
+			[ 'tnt.backoffice.product.entity' ]).service('ProductClient',
+			function ProductClient($q) {
 
 				this.list = function() {
 					var result = [ {
@@ -20,32 +21,41 @@
 					return result;
 				};
 
-				this.loadByUUID = function(uuid) {
+				this.loadByUUID = function(uuid) {					
+					var result = [ {
+						title : "Sabonete",
+						session : 'Cosméticos',
+						line : 'Inverno',
+						price : 8
+					} ];
 
-					var result = 'OK';
-					// TODO
 					return result;
 				};
 
 				this.create = function(product) {
+					var deferred = $q.defer();
 
-					var result = 'OK';
-					// TODO
-					return result;
+					deferred.resolve('OK');
+
+					return deferred.promise;
 				};
 
 				this.update = function(product) {
 
-					var result = 'OK';
-					// TODO
-					return result;
+					var deferred = $q.defer();
+
+					deferred.resolve('OK');
+
+					return deferred.promise;
 				};
 
 				this.remove = function(uuid) {
 
-					var result = 'OK';
-					// TODO
-					return result;
+					var deferred = $q.defer();
+
+					deferred.resolve('OK');
+
+					return deferred.promise;
 				};
 
 			});

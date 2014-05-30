@@ -3,10 +3,10 @@
 
 	angular
 			.module('tnt.backoffice.product.service',
-					[ 'tnt.backoffice.product.client', 'tnt.backoffice.product.entity' ])
+					[ 'tnt.backoffice.product.client', 'tnt.backoffice.product.entity', 'tnt.backoffice.identity'])
 			.service(
 					'ProductService',
-					function ProductService($log, $q, ProductClient, Product) {
+					function ProductService($log, $q, ProductClient, Product, IdentityService) {
 
 						this.list = function() {
 							var result = null;
@@ -40,6 +40,13 @@
 						this.create = function(product) {
 							var result = null;
 							
+							if(product === undefined) {
+								$log
+								.debug('ProductService.create: Unable to create product. You must define properties.');
+								return $q.reject('You must define properties.');
+							}
+							product.uuid = IdentityService.generateUUID();
+													
 							try {
 								product = new Product(product);
 							} catch(err) {
@@ -51,13 +58,14 @@
 							}
 							var hasErrors = this.isValid(product);
 							if (hasErrors.length === 0) {
-								return ProductClient.create(product);
+								result = ProductClient.create(product);
 							} else {
 								$log
 										.debug('ProductService.create: Invalid fields: '
 												+ hasErrors);
-								return $q.reject(hasErrors);
+								result =  $q.reject(hasErrors);
 							}
+							return result;
 						};
 
 						this.update = function(product) {
