@@ -1,64 +1,31 @@
-<div id="sacred">
-	<div class="container">
-
-		<div class="page sacred-third-parties-page">
-
-			<div class="page-header">
-				<div class="row">
-					<div class="col-10">
-						<div class="title">Listagem de Produtos</div>
-						<div class="panel-heading" >Listagem de Produtos</div>
-					</div>
-				</div>
+<div class="row">
+	<div class="col-md-6">
+		<div class="panel panel-info">
+			
+			<div class="master-container">
+				<ul class="breadcrumb">
+					<li class="active">Listagem de Produtos</li>
+				</ul>
 			</div>
 
-			
-			
-			
-			
-		
-			
-			
-			
-			
-			
+			<div><div style="float: left; position: relative; padding-right: 12px">
+				<input type="text" class="form-control" style="width:300px" placeholder="Filtrar por Nome" ng-model="searchProduct" customer-name>
+			</div><div >	
+				<button type="submit" class="btn btn-default"  ng-click="productAdd()">Novo Produto</button>
+			</div></div>
 
-			<div class="page-body">
-				<div class="content">
-					<div class="content-header">
-						<div class="row">
-							<div class="col-6">
-								<input type="text" class="input-header" placeholder="Filtrar por Nome" ng-model="searchProduct" customer-name>
-							</div>
-							<div class="col-6">
-								<button type="submit" class="button-green inline-button" ng-click="productAdd()" >Novo Produto</button>
-							</div>
-						</div>
-					</div>
-					<div class="content-body">
-						<div class="grid">
-							<div class="grid-header">
-								<div class="row">
-									<div class="col-10">Nome</div>
-									<div class="col-6">Se&ccedil;&atilde;o</div>
-									<div class="col-4">Linha</div>
-									<div class="col-4">Pre&ccedil;o</div>
-								</div>
-							</div>
+			<div class="breadcrumb" style="margin-top: 30px; margin-bottom: 0px">
+				<Label style="padding-right: 150px;">Nome</Label>
+				<Label style="padding-right: 90px;">Se&ccedil;&atilde;o</Label>
+				<Label style="padding-right: 70px;">Linha</Label>
+				<Label>Pre&ccedil;o</Label>
+			</div>
 
-							<div class="grid-body grid-scroll">
-								<div class="grid-item single-line clicable" ng-repeat="product in products | filter:searchProduct | limitTo:20">
-									<div class="row">
-										<div class="col-10">{{product.title}}</div>
-										<div class="col-6">{{product.session}}</div>
-										<div class="col-4">{{product.line}}</div>
-										<div class="col-4">{{product.price}}</div>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
+			<div ng-repeat="product in products | filter:searchProduct | limitTo:20">
+				<div style="float: left; position: relative; width: 193px; margin-left: 13px">{{product.title}}</div>
+				<div style="float: left; position: relative; width: 134px; margin-left: 5px">{{product.session}}</div>
+				<div style="float: left; position: relative; width: 110px; margin-left: 5px">{{product.line}}</div>
+				<div style="">{{product.price}}</div>
 			</div>
 		</div>
 	</div>
