@@ -10,7 +10,10 @@
 
 						$scope.product = undefined;
 						$scope.message = '';
-
+						$scope.skus = [];
+						$scope.newSku = [];
+						$scope.copyNewSku = [];
+						
 						$scope.create = function() {
 							ProductService.create($scope.product).then(function() {
 												$scope.message = 'Produto cadastrado com sucesso.';
@@ -19,6 +22,13 @@
 												$scope.message = 'Erro ao cadastrar o produto. Verifique os seguintes campos: '
 														+ err;
 											});
+						};
+
+						$scope.addSku = function() {
+							
+							$scope.copyNewSku = angular.copy($scope.newSku);
+							
+	                        $scope.skus.push( $scope.copyNewSku );
 						};
 
 						$scope.update = function() {
