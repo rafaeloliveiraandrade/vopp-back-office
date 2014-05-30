@@ -3,7 +3,7 @@
 
 	angular
 			.module('tnt.backoffice.product.service',
-					[ 'tnt.backoffice.product.client' ])
+					[ 'tnt.backoffice.product.client', 'tnt.backoffice.product.entity' ])
 			.service(
 					'ProductService',
 					function ProductService($log, $q, ProductClient, Product) {

@@ -1,7 +1,7 @@
 (function(angular) {
 	'use strict';
 
-	angular.module('tnt.backoffice.product.client', []).service(
+	angular.module('tnt.backoffice.product.client', ['tnt.backoffice.product.entity']).service(
 			'ProductClient', function ProductClient() {
 
 				this.list = function() {

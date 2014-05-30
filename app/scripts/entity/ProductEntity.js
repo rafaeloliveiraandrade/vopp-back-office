@@ -13,24 +13,24 @@
 									'description', 'price', 'line', 'session',
 									'status', 'created' ];
 
-//							ObjectUtils
-//									.method(
-//											svc,
-//											'isValid',
-//											function() {
-//												for ( var ix in this) {
-//													var prop = this[ix];
-//
-//													if (!angular
-//															.isFunction(prop)) {
-//														if (validProperties
-//																.indexOf(ix) === -1) {
-//															throw 'Unexpected property '
-//																	+ ix;
-//														}
-//													}
-//												}
-//											});
+							ObjectUtils
+									.method(
+											svc,
+											'isValid',
+											function() {
+												for ( var ix in this) {
+													var prop = this[ix];
+
+													if (!angular
+															.isFunction(prop)) {
+														if (validProperties
+																.indexOf(ix) === -1) {
+															throw 'Unexpected property '
+																	+ ix;
+														}
+													}
+												}
+											});
 
 							if (arguments.length !== svc.length) {
 								if (arguments.length === 1
@@ -50,7 +50,7 @@
 								this.status = status;
 							}
 
-							//ObjectUtils.ro(this, 'uuid', this.uuid);
+							ObjectUtils.ro(this, 'uuid', this.uuid);
 						};
 						return service;
 					});
