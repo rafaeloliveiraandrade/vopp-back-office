@@ -6,22 +6,32 @@
 			.controller(
 					'ProductAddCtrl',
 
-					function($scope, ProductService) {
+					function($scope, $q, ProductService) {
 
 						$scope.product = undefined;
 						$scope.message = '';
-
+						$scope.skus = [];
+						$scope.newSku = [];
+						$scope.copyNewSku = [];
+						
 						$scope.create = function() {
 							ProductService
 									.create($scope.product)
 									.then(
 											function() {
-												message = 'Produto cadastrado com sucesso.';
+												$scope.message = 'Produto cadastrado com sucesso.';
 											},
 											function(err) {
-												message = 'Erro ao cadastrar o produto. Verifique os seguintes campos: '
+												$scope.message = 'Erro ao cadastrar o produto. Verifique os seguintes campos: '
 														+ err;
 											});
+						};
+
+						$scope.addSku = function() {
+							
+							$scope.copyNewSku = angular.copy($scope.newSku);
+							
+	                        $scope.skus.push( $scope.copyNewSku );
 						};
 
 						$scope.update = function() {
@@ -29,10 +39,10 @@
 									.update($scope.product)
 									.then(
 											function() {
-												message = 'Produto atualizado com sucesso.';
+												$scope.message = 'Produto atualizado com sucesso.';
 											},
 											function(err) {
-												message = 'Erro ao atualizar o produto. Verifique os seguintes campos: '
+												$scope.message = 'Erro ao atualizar o produto. Verifique os seguintes campos: '
 														+ err;
 											});
 						};
@@ -41,5 +51,22 @@
 							$scope.product = ProductService
 									.loadByUUID($scope.product.uuid);
 						};
+						
+						$scope.cleanView = function() {
+							$scope.product.line = "";
+							$scope.product.session = "";
+							$scope.product.title = "";
+							$scope.product.description = "";
+							$scope.product.points = "";
+							$scope.product.price = "";
+							$scope.product.image = "";
+						}
+						
+						$scope.cleanViewSku = function() {
+							$scope.product.option = "";
+							$scope.product.sku = "";
+							$scope.product.pricesku = "";
+							$scope.product.imagesku = "";
+						}
 					});
 }(jQuery, angular, window.alert, window.confirm, window.unescape));
