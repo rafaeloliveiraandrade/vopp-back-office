@@ -8,10 +8,8 @@
 					function Product() {
 
 						var service = function svc(uuid, title, description,
-								price, line, session, status) {
-							var validProperties = [ 'uuid', 'title',
-									'description', 'price', 'line', 'session',
-									'status', 'created' ];
+								price, line, session, status, points) {
+							var validProperties = [ 'uuid', 'title', 'description', 'price', 'line', 'session', 'points'];
 
 							ObjectUtils
 									.method(
@@ -38,16 +36,16 @@
 									svc.prototype.isValid.apply(arguments[0]);
 									ObjectUtils.dataCopy(this, arguments[0]);
 								} else {
-									throw 'Entity must be initialized with uuid, title, description, price, line, session, status';
+									throw 'Entity must be initialized with uuid, title, description, price, line, session, points';
 								}
 							} else {
-								this.uuid = uuid;
+								this.uuid = uuid;								
 								this.title = title;
 								this.description = description;
 								this.price = price;
 								this.line = line;
 								this.session = session;
-								this.status = status;
+								this.points = points;	
 							}
 
 							ObjectUtils.ro(this, 'uuid', this.uuid);

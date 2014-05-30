@@ -6,7 +6,7 @@
 			.controller(
 					'ProductAddCtrl',
 
-					function($scope, ProductService) {
+					function($scope, $q, ProductService) {
 
 						$scope.product = undefined;
 						$scope.message = '';
@@ -16,10 +16,10 @@
 									.create($scope.product)
 									.then(
 											function() {
-												message = 'Produto cadastrado com sucesso.';
+												$scope.message = 'Produto cadastrado com sucesso.';
 											},
 											function(err) {
-												message = 'Erro ao cadastrar o produto. Verifique os seguintes campos: '
+												$scope.message = 'Erro ao cadastrar o produto. Verifique os seguintes campos: '
 														+ err;
 											});
 						};
@@ -29,10 +29,10 @@
 									.update($scope.product)
 									.then(
 											function() {
-												message = 'Produto atualizado com sucesso.';
+												$scope.message = 'Produto atualizado com sucesso.';
 											},
 											function(err) {
-												message = 'Erro ao atualizar o produto. Verifique os seguintes campos: '
+												$scope.message = 'Erro ao atualizar o produto. Verifique os seguintes campos: '
 														+ err;
 											});
 						};

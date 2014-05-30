@@ -39,17 +39,25 @@
 
 						this.create = function(product) {
 							var result = null;
-							product = new Product(product);
+							
+							try {
+								product = new Product(product);
+							} catch(err) {
+								
+								$log
+								.debug('ProductService.create: Unable to create product. Err='
+										+ err);
+								return $q.reject(err);
+							}
 							var hasErrors = this.isValid(product);
 							if (hasErrors.length === 0) {
-								result = ProductClient.create(product);
+								return ProductClient.create(product);
 							} else {
 								$log
 										.debug('ProductService.create: Invalid fields: '
 												+ hasErrors);
-								result = $q.reject(hasErrors);
+								return $q.reject(hasErrors);
 							}
-							return result;
 						};
 
 						this.update = function(product) {
@@ -88,6 +96,27 @@
 							}
 							return result;
 						};
+						
+						this.isValid = function (entity) {
+		                    var invalidProperty = {};
+		                    
+		                    invalidProperty.uuid = angular.isDefined(entity.uuid);								
+		                    invalidProperty.title = angular.isDefined(entity.title);
+		                    invalidProperty.description = angular.isDefined(entity.description);
+		                    invalidProperty.price = angular.isDefined(entity.price);
+		                    invalidProperty.line = angular.isDefined(entity.line);
+							invalidProperty.session = angular.isDefined(entity.session);
+							invalidProperty.points = angular.isDefined(entity.points);
+
+		                    var result = [];
+
+		                    for ( var ix in invalidProperty) {
+		                        if (!invalidProperty[ix]) {
+		                            result.push(ix);
+		                        }
+		                    }
+		                    return result;
+		                };
 					});
 
 })(angular);
