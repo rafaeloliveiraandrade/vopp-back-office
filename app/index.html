@@ -7,9 +7,33 @@
 <meta name="viewport" content="width=device-width">
 
 <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css" />
+<link rel="stylesheet" href="styles/main.css">
 <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css" />
 <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap-theme.min.css" />
 <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap-theme.css" />
+
+<link rel="stylesheet" href="styles/sacred-reset.css">
+<link rel="stylesheet" href="styles/sacred-buttons.css">
+<link rel="stylesheet" href="styles/sacred-calendar.css">
+<link rel="stylesheet" href="styles/sacred-form.css">
+<link rel="stylesheet" href="styles/sacred-grid.css">
+<link rel="stylesheet" href="styles/sacred-page.css">
+<link rel="stylesheet" href="styles/sacred-stock.css">
+<link rel="stylesheet" href="styles/sacred-structure.css">
+<link rel="stylesheet" href="styles/sacred-summarizer.css">
+<link rel="stylesheet" href="styles/sacred-third-parties.css">
+<link rel="stylesheet" href="styles/sacred-products-delivery.css">
+<link rel="stylesheet" href="styles/sacred-receivable-check.css">
+<link rel="stylesheet" href="styles/sacred-pagpop.css">
+<link rel="stylesheet" href="styles/sacred-voucher.css">
+<link rel="stylesheet" href="styles/sacred-registration.css">
+<link rel="stylesheet" href="styles/sacred-login.css">
+<link rel="stylesheet" href="styles/sacred-order-list.css">
+<link rel="stylesheet" href="styles/sacred-purchase-order.css">
+<link rel="stylesheet" href="styles/sacred-best-sellers.css">
+<link rel="stylesheet" href="styles/sacred-warm-up.css">
+<link rel="stylesheet" href="styles/sacred-ipad-only.css">
+<link rel="stylesheet" href="styles/sacred-modal.css">
 
 <!-- endbuild -->
 </head>
@@ -24,7 +48,8 @@
 		<h3 class="text-muted">Produtos</h3>
 	</div>
 
-	<div class="container"  ng-view=""></div>
+	<!-- Add your site or application content here -->
+	<div class="container" ng-view=""></div>
 
 	<script src="bower_components/jquery/dist/jquery.js"></script>
 	<script src="bower_components/angular/angular.js"></script>
@@ -32,11 +57,15 @@
 	<script src="bower_components/angular-resource/angular-resource.js"></script>
 	<script src="bower_components/angular-cookies/angular-cookies.js"></script>
 	<script src="bower_components/angular-route/angular-route.js"></script>
+
 	<script src="scripts/app.js"></script>	
+	
 	<script src="scripts/controllers/product-add.js"></script>
 	<script src="scripts/controllers/product-list.js"></script>
+	
 	<script src="scripts/services/ProductService.js"></script>
-	<script src="scripts/client/ProductClient.js"></script>
+	<script src="scripts/clients/ProductClient.js"></script>
+	<script src="scripts/keepers/ProductKeeper.js"></script>
 	
 </body>
 </html>
