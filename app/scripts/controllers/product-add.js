@@ -41,5 +41,22 @@
 							$scope.product = ProductService
 									.loadByUUID($scope.product.uuid);
 						};
+						
+						$scope.cleanView = function() {
+							$scope.product.line = "";
+							$scope.product.session = "";
+							$scope.product.title = "";
+							$scope.product.description = "";
+							$scope.product.points = "";
+							$scope.product.price = "";
+							$scope.product.image = "";
+						}
+						
+						$scope.cleanViewSku = function() {
+							$scope.product.option = "";
+							$scope.product.sku = "";
+							$scope.product.pricesku = "";
+							$scope.product.imagesku = "";
+						}
 					});
 }(jQuery, angular, window.alert, window.confirm, window.unescape));
