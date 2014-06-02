@@ -15,10 +15,7 @@
 						$scope.copyNewSku = [];
 						
 						$scope.create = function() {
-							ProductService
-									.create($scope.product)
-									.then(
-											function() {
+							ProductService.create($scope.product).then(function() {
 												$scope.message = 'Produto cadastrado com sucesso.';
 											},
 											function(err) {
@@ -32,6 +29,10 @@
 							$scope.copyNewSku = angular.copy($scope.newSku);
 							
 	                        $scope.skus.push( $scope.copyNewSku );
+						};
+						
+						$scope.removeSku = function( sku ) {
+							$scope.skus.splice($scope.skus.indexOf(sku),1);
 						};
 
 						$scope.update = function() {
@@ -60,13 +61,6 @@
 							$scope.product.points = "";
 							$scope.product.price = "";
 							$scope.product.image = "";
-						}
-						
-						$scope.cleanViewSku = function() {
-							$scope.product.option = "";
-							$scope.product.sku = "";
-							$scope.product.pricesku = "";
-							$scope.product.imagesku = "";
 						}
 					});
 }(jQuery, angular, window.alert, window.confirm, window.unescape));

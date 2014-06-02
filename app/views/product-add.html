@@ -1,4 +1,5 @@
-	<div ng-controller="ProductAddCtrl">
+<div class="row">
+	<div class="col-md-6">
 		<div class="panel panel-info">
 
 			<div class="master-container">
@@ -60,11 +61,6 @@
 			<div style="border-bottom: 1px solid #DCDCDC "></div>
 			<br/>
 			
-			<div style="width: 100%; text-align: right; ">
-				<a ng-click="cleanViewSku()"><label style="padding-right: 10px">Limpar</label></a>
-				<a href="#"><label>Adicionar</label></a>
-			</div>			
-						
 			<div  class="controls form-inline">
 				<input placeholder="Opcao" class="input-small" type="text" ng-model="newSku.option">
 				<input placeholder="Codigo SKU" class="input-small" type="text" ng-model="newSku.SKU" >
@@ -74,14 +70,16 @@
 				<button ng-click="addSku()">[+]</button>
 			</div>
 
-			<div  class="controls form-inline" ng-repeat="sku in skus">
-				<input class="input-small" type="text" ng-model="sku.option" readonly="readonly">
-				<input class="input-small" type="text" ng-model="sku.SKU" readonly="readonly">
-				<input class="input-small" type="number" ng-model="sku.points" readonly="readonly">
-				<input class="input-small" type="text" ng-model="sku.price" readonly="readonly">
-				<input class="input-small" type="text" ng-model="sku.image" readonly="readonly">
-				<button ng-click="">[-]</button>		
 			<div>
+				<div  class="controls form-inline" ng-repeat="sku in skus">
+					<input class="input-small" type="text" ng-model="sku.option">
+					<input class="input-small" type="text" ng-model="sku.SKU">
+					<input class="input-small" type="number" ng-model="sku.points">
+					<input class="input-small" type="text" ng-model="sku.price">
+					<input class="input-small" type="text" ng-model="sku.image">
+					<button ng-click="removeSku(sku)">[-]</button>
+				<div>
+			</div>
 			
 			<br/>			
 				<div style="border-bottom: 1px solid #DCDCDC "></div>
