@@ -1,52 +1,23 @@
 (function(angular) {
 	'use strict';
 
-	angular.module('tnt.backoffice.product.client', ['tnt.backoffice.product.entity']).service(
-			'ProductClient', function ProductClient() {
+	angular
+			.module('tnt.backoffice.product.client',
+					[ 'ngResource'])
+			.factory(
+					'ProductClient',
+					function ProductClient($resource, Config) {
 
-				this.list = function() {
-					var result = [ {
-						title : "Sabonete",
-						session : 'Cosméticos',
-						line : 'Inverno',
-						price : 8
-					}, {
-						title : 'Creme',
-						session : 'Cosméticos',
-						line : 'Inverno',
-						price : 13
-					} ];
+						return $resource(
+								Config.BACKEND-URL+'/api/product/:uuid',
+								{
+									uuid : "@uuid"
+								}, {
+									"update" : {
+										method : "PUT"
+									}
+								});
 
-					return result;
-				};
-
-				this.loadByUUID = function(uuid) {
-
-					var result = 'OK';
-					// TODO
-					return result;
-				};
-
-				this.create = function(product) {
-
-					var result = 'OK';
-					// TODO
-					return result;
-				};
-
-				this.update = function(product) {
-
-					var result = 'OK';
-					// TODO
-					return result;
-				};
-
-				this.remove = function(uuid) {
-
-					var result = 'OK';
-					// TODO
-					return result;
-				};
-
-			});
+					});
+	
 })(angular);
