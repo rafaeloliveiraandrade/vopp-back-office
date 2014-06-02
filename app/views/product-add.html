@@ -1,5 +1,5 @@
 <div class="row">
-	<div class="col-md-6">
+	<div class="col-md-10">
 		<div class="panel panel-info">
 
 			<div class="master-container">
@@ -62,67 +62,33 @@
 			<br/>
 			
 			<div  class="controls form-inline">
-				<input placeholder="Opcao" class="input-small" type="text" ng-model="newSku.option">
-				<input placeholder="Codigo SKU" class="input-small" type="text" ng-model="newSku.SKU" >
-				<input placeholder="Pontos" class="input-small" type="number" ng-model="newSku.points" >
-				<input placeholder="Preco" class="input-small" type="text" ng-model="newSku.price" >
-				<input placeholder="Imagem" class="input-small" type="text" ng-model="newSku.image" >
+				<input name="" placeholder="Opcao" class="input-small" type="text" ng-model="newSku.option">
+				<input name="" placeholder="Codigo SKU" class="input-small" type="text" ng-model="newSku.SKU" >
+				<input name="" placeholder="Pontos" class="input-small" type="number" ng-model="newSku.points" >
+				<input name="" placeholder="Preco" class="input-small" type="text" ng-model="newSku.price" >
+				<input name="" placeholder="Imagem" class="input-small" type="text" ng-model="newSku.image" >
 				<button ng-click="addSku()">[+]</button>
 			</div>
 
-			<div>
-				<div  class="controls form-inline" ng-repeat="sku in skus">
-					<input class="input-small" type="text" ng-model="sku.option">
-					<input class="input-small" type="text" ng-model="sku.SKU">
-					<input class="input-small" type="number" ng-model="sku.points">
-					<input class="input-small" type="text" ng-model="sku.price">
-					<input class="input-small" type="text" ng-model="sku.image">
-					<button ng-click="removeSku(sku)">[-]</button>
-				<div>
-				
-			<div style="width: 100%; text-align: right; ">
-				<a ng-click="cleanViewSku()"><label style="padding-right: 10px">Limpar</label></a>
-				<a href="#"><label>Adicionar</label></a>
+			<div class="controls form-inline" ng-repeat="sku in skus">
+				<input class="input-small" type="text" ng-model="sku.option" readonly="readonly">
+				<input class="input-small" type="text" ng-model="sku.SKU" readonly="readonly">
+				<input class="input-small" type="number" ng-model="sku.points" readonly="readonly">
+				<input class="input-small" type="text" ng-model="sku.price" readonly="readonly">
+				<input class="input-small" type="text" ng-model="sku.image" readonly="readonly">
+				<button ng-click="removeSku(sku)">[-]</button>
 			</div>
 			
-			<div>
-				<div class="control-group">
-					<label class="control-label">Op&ccedil;&atilde;o:</label> 
-					<input name="option" class="form-control" style="width: 80%"  type="text">
-				</div>
-			</div>
-			
-			<div>
-				<div class="control-group">
-					<label class="control-label">SKU:</label> 
-					<input name="sku" class="form-control" type="text" >
-				</div>
-			</div>
-			
-			<div>
-				<div class="control-group">
-					<label class="control-label">Pre&ccedil;o:</label> 
-					<input name="pricesku" class="form-control" style="width: 100px" type="number" >
-				</div>
-			</div>
-			
-			<div>
-				<div class="control-group">
-					<label class="control-label">Imagem:</label> 
-					<input name="imagesku" class="form-control" type="image" required>
-				</div>
-			</div>
-			
-			<br/>			
-				<div style="border-bottom: 1px solid #DCDCDC "></div>
 			<br/>
-			
 			<div style="text-align: center;">
 				<label class="control-label">{{message}}</label>
 			
 				<button type="submit" class="btn btn-default" ng-click="create()">Cadastrar</button>
 				<button type="submit" class="btn btn-default" ng-click="cleanView()">Limpar</button>
 			</div>
+			<br/>
+				<div style="border-bottom: 1px solid #DCDCDC "></div>
+			<br/>
 
 		</div>
 	</div>

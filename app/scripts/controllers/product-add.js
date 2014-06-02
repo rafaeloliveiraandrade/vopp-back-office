@@ -11,8 +11,7 @@
 						$scope.product = undefined;
 						$scope.message = '';
 						$scope.skus = [];
-						$scope.newSku = [];
-						$scope.copyNewSku = [];
+						$scope.newSku = {};
 						
 						$scope.create = function() {
 							ProductService.create($scope.product).then(function() {
@@ -25,10 +24,8 @@
 						};
 
 						$scope.addSku = function() {
-							
-							$scope.copyNewSku = angular.copy($scope.newSku);
-							
-	                        $scope.skus.push( $scope.copyNewSku );
+							$scope.skus.splice(0, 0, angular.copy($scope.newSku));
+	                        $scope.newSku = {};
 						};
 						
 						$scope.removeSku = function( sku ) {
