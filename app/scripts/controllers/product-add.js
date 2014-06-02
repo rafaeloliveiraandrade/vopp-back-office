@@ -30,6 +30,10 @@
 							
 	                        $scope.skus.push( $scope.copyNewSku );
 						};
+						
+						$scope.removeSku = function( sku ) {
+							$scope.skus.splice($scope.skus.indexOf(sku),1);
+						};
 
 						$scope.update = function() {
 							ProductService
@@ -57,13 +61,6 @@
 							$scope.product.points = "";
 							$scope.product.price = "";
 							$scope.product.image = "";
-						}
-						
-						$scope.cleanViewSku = function() {
-							$scope.product.option = "";
-							$scope.product.sku = "";
-							$scope.product.pricesku = "";
-							$scope.product.imagesku = "";
 						}
 					});
 }(jQuery, angular, window.alert, window.confirm, window.unescape));
