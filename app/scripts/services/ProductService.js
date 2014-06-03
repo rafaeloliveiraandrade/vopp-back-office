@@ -13,12 +13,12 @@
 							//Remove after NodeJS development
 							var result = [ {
 								title : "Sabonete",
-								session : 'Cosméticos',
+								session : 'Cosmï¿½ticos',
 								line : 'Inverno',
 								price : 8
 							}, {
 								title : 'Creme',
-								session : 'Cosméticos',
+								session : 'Cosmï¿½ticos',
 								line : 'Inverno',
 								price : 13
 							} ];
@@ -41,7 +41,7 @@
 							//Remove after NodeJS development
 							var result = [ {
 								title : "Sabonete",
-								session : 'Cosméticos',
+								session : 'Cosmï¿½ticos',
 								line : 'Inverno',
 								price : 8
 							} ];
@@ -149,12 +149,15 @@
 		                    invalidProperty.line = angular.isDefined(entity.line);
 							invalidProperty.session = angular.isDefined(entity.session);
 							invalidProperty.points = angular.isDefined(entity.points);
-
+							invalidProperty.image = angular.isDefined(entity.image);
+							
+							
+							
 		                    var result = [];
 
-		                    for ( var ix in invalidProperty) {
-		                        if (!invalidProperty[ix]) {
-		                            result.push(ix);
+		                    for (var prop in invalidProperty) {
+		                        if (!invalidProperty[prop]) {
+		                            result.push(prop);
 		                        }
 		                    }
 		                    return result;

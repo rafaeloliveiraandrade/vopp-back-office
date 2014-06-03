@@ -6,8 +6,10 @@
 			.controller(
 					'ProductAddCtrl',
 
+					
 					function($scope, $q, ProductService) {
 
+						$scope.msgValidacao = 'Campo obrigatório';
 						$scope.product = undefined;
 						$scope.message = '';
 						$scope.skus = [];
@@ -50,6 +52,12 @@
 									.loadByUUID($scope.product.uuid);
 						};
 						
+						$scope.submitForm = function(isValid) {
+							if(!isValid){
+								alert("Validação incorreta");
+							}
+						};
+						
 						$scope.cleanView = function() {
 							$scope.product.line = "";
 							$scope.product.session = "";
@@ -58,6 +66,9 @@
 							$scope.product.points = "";
 							$scope.product.price = "";
 							$scope.product.image = "";
+							$scope.newSku = {};
+							$scope.skus = [];
+								
 						}
 					});
 }(jQuery, angular, window.alert, window.confirm, window.unescape));
