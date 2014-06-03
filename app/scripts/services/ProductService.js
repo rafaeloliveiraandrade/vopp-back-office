@@ -16,9 +16,7 @@
 								title : "Sabonete",
 								session : 'Cosmeticos',
 								description:'Sabonete para banho',
-								session : 'Cosmeticos',
 								line : 'Inverno',
-								price : 8
 								price : 8,
 								points: 1
 							}, {
@@ -50,11 +48,9 @@
 							var result = [ {
 								uuid: '234sdf234234',
 								title : "Sabonete",
-								session : 'Cosmeticos',
 								description:'Sabonete para banho',
 								session : 'Cosmeticos',
 								line : 'Inverno',
-								price : 8
 								price : 8,
 								points: 1
 							} ];
