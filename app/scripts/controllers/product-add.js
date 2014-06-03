@@ -60,7 +60,7 @@
 
 						$scope.submitForm = function(isValid) {
 							if(!isValid){
-								alert("Validação incorreta");
+								alert("Validacao incorreta");
 							}
 						};
 						
