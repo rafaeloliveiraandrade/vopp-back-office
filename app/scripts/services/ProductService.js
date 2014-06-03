@@ -59,6 +59,7 @@
 								points: 1
 							} ];
 							
+							
 							/*var result = '';
 							try {
 								if (uuid === undefined) {
