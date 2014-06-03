@@ -13,9 +13,12 @@
 						$scope.skus = [];
 						$scope.newSku = [];
 						$scope.copyNewSku = [];
-						
+
 						$scope.create = function() {
-							ProductService.create($scope.product).then(function() {
+							ProductService
+									.create($scope.product)
+									.then(
+											function() {
 												$scope.message = 'Produto cadastrado com sucesso.';
 											},
 											function(err) {
@@ -25,14 +28,14 @@
 						};
 
 						$scope.addSku = function() {
-							
+
 							$scope.copyNewSku = angular.copy($scope.newSku);
-							
-	                        $scope.skus.push( $scope.copyNewSku );
+
+							$scope.skus.push($scope.copyNewSku);
 						};
-						
-						$scope.removeSku = function( sku ) {
-							$scope.skus.splice($scope.skus.indexOf(sku),1);
+
+						$scope.removeSku = function(sku) {
+							$scope.skus.splice($scope.skus.indexOf(sku), 1);
 						};
 
 						$scope.update = function() {
@@ -52,7 +55,7 @@
 							$scope.product = ProductService
 									.loadByUUID($scope.product.uuid);
 						};
-						
+
 						$scope.cleanView = function() {
 							$scope.product.line = "";
 							$scope.product.session = "";

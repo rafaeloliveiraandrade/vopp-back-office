@@ -8,7 +8,7 @@
 					function Product() {
 
 						var service = function svc(uuid, title, description,
-								price, line, session, status, points) {
+								price, line, session, points) {
 							var validProperties = [ 'uuid', 'title', 'description', 'price', 'line', 'session', 'points'];
 
 							ObjectUtils

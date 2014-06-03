@@ -9,18 +9,24 @@
 					function ProductService($log, $q, ProductClient, Product, IdentityService) {
 
 						this.list = function() {
-														
+													
 							//Remove after NodeJS development
 							var result = [ {
+								uuid: '234sdf234234',
 								title : "Sabonete",
+								description:'Sabonete para banho',
 								session : 'Cosméticos',
 								line : 'Inverno',
-								price : 8
+								price : 8,
+								points: 1
 							}, {
-								title : 'Creme',
+								uuid: '999sdf234888',
+								title : "Creme",
+								description:'Creme para banho',
 								session : 'Cosméticos',
-								line : 'Inverno',
-								price : 13
+								line : 'Verão',
+								price : 9,
+								points: 2
 							} ];
 							
 							/*var result = null;
@@ -40,10 +46,13 @@
 							
 							//Remove after NodeJS development
 							var result = [ {
+								uuid: '234sdf234234',
 								title : "Sabonete",
+								description:'Sabonete para banho',
 								session : 'Cosméticos',
 								line : 'Inverno',
-								price : 8
+								price : 8,
+								points: 1
 							} ];
 							
 							/*var result = '';
@@ -70,8 +79,8 @@
 							}
 						};
 
-						this.create = function(product) {
-							var result = null;
+						this.create = function(product) {																
+							var deferred = $q.defer ();
 							
 							if(product === undefined) {
 								$log
@@ -91,28 +100,34 @@
 							}
 							var hasErrors = this.isValid(product);
 							if (hasErrors.length === 0) {
-								result = ProductClient.save(product);
+								ProductClient.save(product);
+								
+								deferred.resolve('OK');
+								return deferred.promise;
 							} else {
 								$log
 										.debug('ProductService.create: Invalid fields: '
 												+ hasErrors);
-								result =  $q.reject(hasErrors);
-							}
-							return result;
+								return $q.reject(hasErrors);
+							}							
 						};
 
 						this.update = function(product) {
-							var result = null;
+							var deferred = $q.defer ();
+							
 							var hasErrors = this.isValid(product);
 							if (hasErrors.length === 0) {
+								
 								result = ProductClient.save(product);
+								
+								deferred.resolve('OK');
+								return deferred.promise;
 							} else {
 								$log
 										.debug('ProductService.update: Invalid fields: '
 												+ hasErrors);
-								result = $q.reject(hasErrors);
+								return $q.reject(hasErrors);
 							}
-							return result;
 						};
 
 						this.remove = function(uuid) {
