@@ -14,17 +14,19 @@
 							var result = [ {
 								uuid: '234sdf234234',
 								title : "Sabonete",
+								session : 'Cosmeticos',
 								description:'Sabonete para banho',
-								session : 'Cosméticos',
+								session : 'CosmÃ©ticos',
 								line : 'Inverno',
+								price : 8
 								price : 8,
 								points: 1
 							}, {
 								uuid: '999sdf234888',
 								title : "Creme",
-								description:'Creme para banho',
-								session : 'Cosméticos',
-								line : 'Verão',
+								description:'Creme para banho',							
+								session : 'Cosmeticos',
+								line : 'VerÃ£o',
 								price : 9,
 								points: 2
 							} ];
@@ -48,9 +50,11 @@
 							var result = [ {
 								uuid: '234sdf234234',
 								title : "Sabonete",
+								session : 'CosmÃ©ticos',
 								description:'Sabonete para banho',
-								session : 'Cosméticos',
+								session : 'Cosmeticos',
 								line : 'Inverno',
+								price : 8
 								price : 8,
 								points: 1
 							} ];
@@ -125,7 +129,7 @@
 							} else {
 								$log
 										.debug('ProductService.update: Invalid fields: '
-												+ hasErrors);
+												+ hasErrors);								
 								return $q.reject(hasErrors);
 							}
 						};
@@ -164,12 +168,14 @@
 		                    invalidProperty.line = angular.isDefined(entity.line);
 							invalidProperty.session = angular.isDefined(entity.session);
 							invalidProperty.points = angular.isDefined(entity.points);
-
-		                    var result = [];
-
-		                    for ( var ix in invalidProperty) {
-		                        if (!invalidProperty[ix]) {
-		                            result.push(ix);
+							invalidProperty.image = angular.isDefined(entity.image);
+							
+							
+							
+		                    var result = [];	                    
+		                    for (var prop in invalidProperty) {
+		                        if (!invalidProperty[prop]) {
+		                            result.push(prop);
 		                        }
 		                    }
 		                    return result;

@@ -6,13 +6,14 @@
 			.controller(
 					'ProductAddCtrl',
 
+					
 					function($scope, $q, ProductService) {
 
+						$scope.msgValidacao = 'Campo obrigatorio';
 						$scope.product = undefined;
 						$scope.message = '';
 						$scope.skus = [];
-						$scope.newSku = [];
-						$scope.copyNewSku = [];
+						$scope.newSku = {};
 
 						$scope.create = function() {
 							ProductService
@@ -28,10 +29,11 @@
 						};
 
 						$scope.addSku = function() {
-
+							$scope.skus.splice(0, 0, angular.copy($scope.newSku));	                        
 							$scope.copyNewSku = angular.copy($scope.newSku);
-
 							$scope.skus.push($scope.copyNewSku);
+	                        $scope.newSku = {};
+
 						};
 
 						$scope.removeSku = function(sku) {
@@ -56,6 +58,12 @@
 									.loadByUUID($scope.product.uuid);
 						};
 
+						$scope.submitForm = function(isValid) {
+							if(!isValid){
+								alert("Validação incorreta");
+							}
+						};
+						
 						$scope.cleanView = function() {
 							$scope.product.line = "";
 							$scope.product.session = "";
@@ -64,6 +72,9 @@
 							$scope.product.points = "";
 							$scope.product.price = "";
 							$scope.product.image = "";
+							$scope.newSku = {};
+							$scope.skus = [];
+								
 						}
 					});
 }(jQuery, angular, window.alert, window.confirm, window.unescape));
